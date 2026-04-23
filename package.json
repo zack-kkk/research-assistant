@@ -1,0 +1,14 @@
+{
+  "name": "agentic-research-assistant",
+  "version": "1.0.0",
+  "description": "Root package for running both frontend and backend concurrently.",
+  "scripts": {
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && python main.py",
+    "start:frontend": "cd frontend && npm run dev -- --host",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && pip install -r requirements.txt"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
